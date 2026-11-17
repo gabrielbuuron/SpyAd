@@ -1,0 +1,8 @@
+Execução real em 17/11/2026
+Node v24.22.0 / npm 11.19.1 / Next 16.4.4
+
+> spyad@0.1.0 lint
+> eslint .
+
+
+Exit code: 0

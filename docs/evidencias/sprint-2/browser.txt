@@ -1,0 +1,5 @@
+Tentativa real: cua.listBrowsers()
+Resultado: The browser access host is unavailable
+Nenhuma captura ou aprovação visual.
+Canvas, ImageBitmap, FileReader, downloads, Worker no browser e interação real: pendentes.
+Os testes Node usam adaptador Sharp; não são testes do canvas nativo.

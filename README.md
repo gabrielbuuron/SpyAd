@@ -1,17 +1,17 @@
-# SpyAd — Sprint 1.1
+# SpyAd — Sprint 2.0 / Creative Lab
 
-Protótipo demonstrativo de inteligência publicitária. Sem credenciais, coleta, anúncios reais, APIs pagas ou autenticação.
+Laboratório local para imagens próprias/autorizadas: importar, inspecionar, re-encodificar, reinspecionar e exportar sem sobrescrever o original. JPEG, PNG e WebP estáticos; até 10 MiB, 8 MP e 8.192 px por lado. Sem upload ou armazenamento automático.
 
-## Executar localmente
+## Rodar localmente
 
-Node 24 e npm 11.19.1.
+Node 24, npm 11.19.1.
 
 ```powershell
 npm ci
 npm run dev
 ```
 
-Preview: http://127.0.0.1:3220
+Abrir http://127.0.0.1:3230/#creative-lab. Para homologar a política de produção, executar npm run build e npm start.
 
 ```powershell
 npm run lint
@@ -19,14 +19,18 @@ npm run typecheck
 npm test
 npm run build
 npm start
-# Em outro terminal, com o servidor ativo:
+# Em outro terminal:
 npm run test:http
+# Arquivos sintéticos para homologação:
+node tests/lab-fixtures.mjs
 ```
 
-A navegação usa hashes: #dashboard, #explorer, #collections, #settings, #radar e #dna. Busca e filtros funcionam sobre três exemplos fictícios. Coleções persistem somente no navegador (localStorage), sem sincronização entre dispositivos. Configurações permite redefinir a coleção demonstrativa. Spy Radar e Offer DNA são áreas planejadas.
+Fixtures geradas em .lab-fixtures/ (fora do Git). A suíte atual tem 68 testes, incluindo os 38 anteriores. A rasterização automatizada usa adaptador Node/Sharp já presente no lockfile; não homologa o canvas de Chrome/Safari.
 
-A migração Next 15→16, os testes executados e as limitações de validação visual estão em [AUDITORIA-SPYAD-SPRINT-1.md](AUDITORIA-SPYAD-SPRINT-1.md). Não houve deploy ou merge. A homologação visual continua pendente.
+[Relatório completo do P0](docs/SPRINT-2-CREATIVE-LAB-RELATORIO.md) · [Homologação manual](docs/SPRINT-2-CREATIVE-LAB-HOMOLOGACAO.md).
 
-Refinamento atual: [Sprint 1.1 — Visual Excellence](docs/SPRINT-1-1-VISUAL-EXCELLENCE.md). O Explorer ganhou busca e ações claras, tokens tipográficos consolidados e navegação própria para tablet/celular. O menu Mais reúne Radar, DNA e Configurações no celular. Os 38 testes não substituem a homologação em navegador; novas capturas continuam pendentes. Veja o [roteiro manual](docs/evidencias/sprint-1-1/HOMOLOGACAO-MANUAL.md).
+O browser usa ImageBitmap, worker/canvas e verificação local. APNG/WebP animado são bloqueados. Campos não cobertos não recebem garantia de remoção. Compressão, cores, precisão, perfil ICC e transparência podem mudar; JPEG compõe sobre branco. Não há remoção de marca d’água nem promessa de aprovação de anúncios.
 
-Rodada mais recente: [Homologação final da Sprint 1.1](docs/SPRINT-1-1-HOMOLOGACAO-FINAL.md). Dossiê com rodapé interno de ações e conteúdo rolável independente; verificações técnicas passaram, mas dispositivos, teclado, persistência real após reload e zoom ainda aguardam navegador.
+A navegação mantém Dashboard, Explorer, Radar, DNA, Coleções e Configurações; Creative Lab é o sétimo destino, em Mais no celular. Coleções demonstrativas continuam persistidas localmente; arquivos do Lab ficam somente em memória. Não há autenticação ou APIs de anúncios conectadas.
+
+Histórico preservado: [Sprint 1.1](docs/SPRINT-1-1-VISUAL-EXCELLENCE.md), [última rodada técnica](docs/SPRINT-1-1-HOMOLOGACAO-FINAL.md) e [auditoria](AUDITORIA-SPYAD-SPRINT-1.md). A homologação real de navegador da Sprint 1.1 continua parcial; a Sprint 2 também aguarda testes de browser e revisão do usuário. Nenhum merge/deploy foi feito.

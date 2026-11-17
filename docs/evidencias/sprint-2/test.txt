@@ -1,0 +1,84 @@
+Execução real em 17/11/2026
+Node v24.22.0 / npm 11.19.1 / Next 16.4.4
+
+> spyad@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ galeria e lista mantêm os mesmos dados e ações acessíveis (290.7275ms)
+✔ salvamento expõe estado e nome de remoção nas duas visualizações (4.4297ms)
+✔ navegação móvel preserva os seis destinos com disclosure explícito (45.271ms)
+✔ Explorer mantém busca, submit, modos e vínculo com os resultados (109.8847ms)
+✔ coleção vazia e estados de filtro vazio oferecem ação de recuperação (7.222ms)
+✔ dossiê descreve demonstração, fechamento e falha de armazenamento (23.5184ms)
+✔ prévia não oferece playback falso e Dashboard mantém CTA do Explorer (32.0015ms)
+✔ dossiê mantém salvar e erros fora da região rolável, com estado acessível (9.2036ms)
+✔ Creative Lab inicia com seletor local, limites e sem resultado/exportação falsos (330.5435ms)
+✔ relatório apresenta cobertura limitada e estados não verificáveis sem promessa absoluta (325.7329ms)
+✔ contraste AA dos tokens text / background (3.264ms)
+✔ contraste AA dos tokens text / surface (0.4346ms)
+✔ contraste AA dos tokens text / surface-raised (0.2788ms)
+✔ contraste AA dos tokens muted / background (0.318ms)
+✔ contraste AA dos tokens muted / surface (0.2715ms)
+✔ contraste AA dos tokens muted / surface-raised (0.2356ms)
+✔ contraste AA dos tokens subtle / background (0.2697ms)
+✔ contraste AA dos tokens subtle / surface (0.1861ms)
+✔ contraste AA dos tokens subtle / surface-raised (1.8875ms)
+✔ contraste AA dos tokens accent / background (0.457ms)
+✔ contraste AA dos tokens accent / surface (0.2238ms)
+✔ contraste AA dos tokens accent / surface-raised (0.1608ms)
+✔ botão primário tem contraste AA (0.2367ms)
+✔ borda dos controles é distinguível em background (0.267ms)
+✔ borda dos controles é distinguível em surface (0.1339ms)
+✔ borda dos controles é distinguível em surface-raised (0.1881ms)
+✔ contraste AA em ação de dossiê (0.1735ms)
+✔ contraste AA em estado salvo (0.1652ms)
+✔ contraste AA em aviso de erro (0.1701ms)
+✔ contraste AA em badge demo (3.4524ms)
+✔ contraste AA em legenda da prévia (0.152ms)
+✔ assinaturas reais JPEG/PNG/WebP e saída usam o formato, não a extensão/MIME (8.5232ms)
+✔ vazio, formato inválido e oversized são rejeitados antes de decodificar (1.9568ms)
+✔ EXIF sintético lê orientação, fabricante e GPS sem inventar campos (2.3056ms)
+✔ PNG lê texto, informa texto comprimido não suportado e detecta transparência (0.7365ms)
+✔ neutralização EXIF é em cópia, mantém CRC PNG válido e não duplica rotação (2.6722ms)
+✔ APNG e WebP animado são bloqueados explicitamente (17.9965ms)
+✔ CRC, RIFF, JPEG truncado e diretório EXIF inválido são rejeitados (3.3602ms)
+✔ limites de resolução são validados antes do decoder (0.5317ms)
+✔ cabeçalho válido sem dados de pixels decodificáveis não passa na inspeção completa (3.7197ms)
+✔ pipeline real Node jpeg: re-encoding, reinspeção, original intacto e saída decodificável (13.8248ms)
+✔ pipeline real Node png: re-encoding, reinspeção, original intacto e saída decodificável (6.6085ms)
+✔ pipeline real Node webp: re-encoding, reinspeção, original intacto e saída decodificável (7.8163ms)
+✔ limpeza efetivamente remove EXIF/GPS/texto cobertos e mantém outros não verificáveis (25.0671ms)
+✔ texto comprimido não é anunciado como removido com garantia (6.4493ms)
+✔ perfil detectado antes/depois não é falsamente anunciado como idêntico (0.5315ms)
+✔ orientação EXIF 1 normaliza dimensões e pixels com referência independente (21.0378ms)
+✔ orientação EXIF 2 normaliza dimensões e pixels com referência independente (21.8611ms)
+✔ orientação EXIF 3 normaliza dimensões e pixels com referência independente (21.8249ms)
+✔ orientação EXIF 4 normaliza dimensões e pixels com referência independente (38.214ms)
+✔ orientação EXIF 5 normaliza dimensões e pixels com referência independente (16.8348ms)
+✔ orientação EXIF 6 normaliza dimensões e pixels com referência independente (27.8784ms)
+✔ orientação EXIF 7 normaliza dimensões e pixels com referência independente (18.8228ms)
+✔ orientação EXIF 8 normaliza dimensões e pixels com referência independente (21.8095ms)
+✔ alpha é preservado em PNG e WebP; JPEG compõe sobre branco (28.6082ms)
+✔ cancelamento, encoder incorreto e original divergente bloqueiam exportação (9.4065ms)
+✔ bitmap é fechado quando o encoder falha (3.3116ms)
+✔ resultado com orientação incorreta ou GPS residual é bloqueado (14.2433ms)
+✔ cancelar durante decodificação fecha o bitmap e não exporta (4.3949ms)
+✔ busca ignora caixa, acentos, espaços extras e combina termos (7.0308ms)
+✔ filtros de plataforma e formato compõem e retornam vazio corretamente (1.0047ms)
+✔ coleções compõem com busca sem alterar a base original (1.9597ms)
+✔ salvar, recarregar e remover preservam o formato versionado (2.5881ms)
+✔ redefinição e reidratação mantêm somente IDs válidos sem duplicatas (0.5204ms)
+✔ coleção corrompida é preservada até redefinição explícita (0.527ms)
+✔ armazenamento indisponível e quota excedida retornam falha sem falso sucesso (0.5265ms)
+✔ gravações sucessivas leem o armazenamento atual, sem perder outro salvamento (0.3396ms)
+✔ navegação preserva seis destinos e inclui Creative Lab e fixtures explicitamente demonstrativas (1.8215ms)
+ℹ tests 68
+ℹ suites 0
+ℹ pass 68
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2266.9855
+
+Exit code: 0
