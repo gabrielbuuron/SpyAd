@@ -1,0 +1,4 @@
+import { Icon } from './icon';
+export function PlannedArea({ radar }: { radar: boolean }) {
+  return <section className="planned-area"><span className="planned-icon"><Icon name={radar?'radar':'dna'} size={34}/></span><span className="eyebrow">ÁREA PLANEJADA · INDISPONÍVEL NA SPRINT 1</span><h2>{radar?'Sinais com contexto.':'Uma leitura mais profunda da oferta.'}</h2><p>{radar?'O Spy Radar está previsto para organizar sinais observáveis de campanhas. Monitoramento e alertas ainda não estão implementados.':'O Offer DNA está previsto para estruturar a análise de ofertas. Análise automática e inferências ainda não estão implementadas.'}</p><div className="planned-note"><Icon name="shield" size={18}/>Nenhuma coleta, análise automática ou API está ativa.</div><a className="button secondary" href="#explorer">Explorar exemplos disponíveis<Icon name="arrow" size={16}/></a></section>;
+}

@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+const response = await fetch('http://127.0.0.1:3220');
+assert.equal(response.status, 200);
+const html = await response.text();
+for (const text of ['Visão geral', 'Ambiente demonstrativo', 'Workspace de estudo', 'Sem conta conectada', 'Referências para explorar', 'main-content']) assert.ok(html.includes(text), text);
+for (const id of ['dashboard', 'explorer', 'radar', 'dna', 'collections', 'settings']) assert.ok(html.includes('href="#' + id + '"'), id);
+assert.equal(response.headers.get('x-powered-by'), null);
+const styles = [...html.matchAll(/href="([^"<>]+\.css[^"<>]*)"/g)].map(match => match[1]);
+assert.ok(styles.length > 0);
+for (const style of styles) assert.equal((await fetch(new URL(style.replaceAll('&amp;', '&'), 'http://127.0.0.1:3220'))).status, 200);
+assert.equal((await fetch('http://127.0.0.1:3220/rota-inexistente')).status, 404);
+console.log('Smoke HTTP: página SSR, seis destinos, CSS servido e 404 passaram. Não valida cliques nem responsividade.');

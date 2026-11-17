@@ -1,0 +1,37 @@
+Executado em 17/11/2026; ambiente Node 24.22.0 / npm 11.19.1.
+
+> spyad@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ contraste AA dos tokens text / background (2.8585ms)
+✔ contraste AA dos tokens text / surface (0.4019ms)
+✔ contraste AA dos tokens text / surface-raised (0.2993ms)
+✔ contraste AA dos tokens muted / background (0.2946ms)
+✔ contraste AA dos tokens muted / surface (0.2833ms)
+✔ contraste AA dos tokens muted / surface-raised (0.1872ms)
+✔ contraste AA dos tokens subtle / background (0.288ms)
+✔ contraste AA dos tokens subtle / surface (0.2255ms)
+✔ contraste AA dos tokens subtle / surface-raised (0.2664ms)
+✔ contraste AA dos tokens accent / background (0.4399ms)
+✔ contraste AA dos tokens accent / surface (0.2124ms)
+✔ contraste AA dos tokens accent / surface-raised (1.8652ms)
+✔ botão primário tem contraste AA (0.3711ms)
+✔ busca ignora caixa, acentos, espaços extras e combina termos (6.6104ms)
+✔ filtros de plataforma e formato compõem e retornam vazio corretamente (0.7679ms)
+✔ coleções compõem com busca sem alterar a base original (0.4695ms)
+✔ salvar, recarregar e remover preservam o formato versionado (0.9417ms)
+✔ redefinição e reidratação mantêm somente IDs válidos sem duplicatas (0.3716ms)
+✔ coleção corrompida é preservada até redefinição explícita (1.3453ms)
+✔ armazenamento indisponível e quota excedida retornam falha sem falso sucesso (0.555ms)
+✔ gravações sucessivas leem o armazenamento atual, sem perder outro salvamento (0.3535ms)
+✔ navegação tem seis destinos únicos e fixtures explicitamente demonstrativas (1.1072ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 451.86
+
+Exit code: 0
