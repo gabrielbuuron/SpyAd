@@ -1,0 +1,5 @@
+Tentativa real: cua.listBrowsers()
+Resultado: The browser access host is unavailable
+Sem screenshots ou homologação visual do produto.
+Prancha de assets e app-icon 512 inspecionados com view_image, sem navegador.
+A imagem escolhida como segunda proposta não está presente como asset no repositório.

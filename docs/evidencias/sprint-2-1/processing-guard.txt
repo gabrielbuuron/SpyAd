@@ -1,0 +1,14 @@
+Comparação real dos hashes de blob Git com o HEAD inicial 50f2701d364877b3f9b37ca3a24c5d04c0093f7b.
+11 arquivos de núcleo inalterados:
+0e971dad225f34d07749940eb4bff4db4fe8a143 src/features/creative-lab/lib/binary.mjs
+cfd6f41ccb5b505d1c4e0a0aa3ddb475474b8d27 src/features/creative-lab/lib/browser-backend.ts
+f3e96803329f8b46ff05e8930e984ad0255d60da src/features/creative-lab/lib/exif.mjs
+33de351fc154c382957aa75bd19f1a72a38d1418 src/features/creative-lab/lib/file-validation.mjs
+351eeea35d3e70e3b62be9003010915eb8a39f22 src/features/creative-lab/lib/image.worker.ts
+fc27f486b25ea5bc2f2a2466718b342d38ccb382 src/features/creative-lab/lib/inspect-image.mjs
+f6e6e95975dcb67471c18f6fd13cddd829f5e60f src/features/creative-lab/lib/run-job.ts
+037c3e336165b61f9bfb7dc36a9aa4b8344f4d2e src/features/creative-lab/lib/sanitize-image.mjs
+6d3e1a0c441e8011cb307b4c27b11a82983af96c src/features/creative-lab/lib/verify-image.mjs
+d190671e7a5e3be3763bf9c8281bf438dbe6ee53 src/features/creative-lab/types.ts
+0a5fd3788f11488d5ca383ca64968c9797bb3d9b src/features/creative-lab/use-creative-lab.ts
+A mudança em inspection-panel.tsx é somente o atributo data-status para apresentação.

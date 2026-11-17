@@ -1,19 +1,21 @@
-# SpyAd — Sprint 2.0 / Creative Lab
+# SpyAd — Sprint 2.1 / Signal S
 
-Laboratório local para imagens próprias/autorizadas: importar, inspecionar, re-encodificar, reinspecionar e exportar sem sobrescrever o original. JPEG, PNG e WebP estáticos; até 10 MiB, 8 MP e 8.192 px por lado. Sem upload ou armazenamento automático.
+Identidade vetorial e experiência de produto sobre o Creative Lab P0. A direção Signal S recebe interpretação original em SVG, pendente de comparação com o estudo escolhido e aprovação final do usuário.
 
-## Rodar localmente
+## Rodar
 
-Node 24, npm 11.19.1.
+Node 24, npm 11.19.1:
 
 ```powershell
 npm ci
 npm run dev
 ```
 
-Abrir http://127.0.0.1:3230/#creative-lab. Para homologar a política de produção, executar npm run build e npm start.
+Preview: http://127.0.0.1:3240 (Creative Lab em #creative-lab).
 
 ```powershell
+npm run brand:generate
+npm run brand:generate -- --proof
 npm run lint
 npm run typecheck
 npm test
@@ -21,16 +23,14 @@ npm run build
 npm start
 # Em outro terminal:
 npm run test:http
-# Arquivos sintéticos para homologação:
-node tests/lab-fixtures.mjs
 ```
 
-Fixtures geradas em .lab-fixtures/ (fora do Git). A suíte atual tem 68 testes, incluindo os 38 anteriores. A rasterização automatizada usa adaptador Node/Sharp já presente no lockfile; não homologa o canvas de Chrome/Safari.
+[Guia da marca](docs/BRAND-SPYAD-SIGNAL-S.md) · [Relatório técnico](docs/SPRINT-2-1-BRAND-RELATORIO.md) · [Homologação](docs/SPRINT-2-1-BRAND-HOMOLOGACAO.md).
 
-[Relatório completo do P0](docs/SPRINT-2-CREATIVE-LAB-RELATORIO.md) · [Homologação manual](docs/SPRINT-2-CREATIVE-LAB-HOMOLOGACAO.md).
+Assets canônicos em public/brand/. A prancha gerada fica em .brand-review/ (fora do Git); não é captura da aplicação. Manifesto e ícones não significam PWA instalada/offline homologada.
 
-O browser usa ImageBitmap, worker/canvas e verificação local. APNG/WebP animado são bloqueados. Campos não cobertos não recebem garantia de remoção. Compressão, cores, precisão, perfil ICC e transparência podem mudar; JPEG compõe sobre branco. Não há remoção de marca d’água nem promessa de aprovação de anúncios.
+A suíte atual tem 77 testes, mantendo os 68 anteriores. O núcleo de processamento do Creative Lab e o lockfile permanecem intactos. Só a apresentação do diagnóstico foi refinada. Não há novas APIs, fontes remotas, trackers ou upload. A marca da SpyAd não é aplicada a arquivos importados/exportados.
 
-A navegação mantém Dashboard, Explorer, Radar, DNA, Coleções e Configurações; Creative Lab é o sétimo destino, em Mais no celular. Coleções demonstrativas continuam persistidas localmente; arquivos do Lab ficam somente em memória. Não há autenticação ou APIs de anúncios conectadas.
+O Creative Lab continua aceitando JPEG, PNG e WebP estáticos de arquivos próprios/autorizados, com limites e metadados cobertos descritos no [relatório P0](docs/SPRINT-2-CREATIVE-LAB-RELATORIO.md). Os testes de imagem usam adaptador Node/Sharp e não homologam canvas/worker nativo.
 
-Histórico preservado: [Sprint 1.1](docs/SPRINT-1-1-VISUAL-EXCELLENCE.md), [última rodada técnica](docs/SPRINT-1-1-HOMOLOGACAO-FINAL.md) e [auditoria](AUDITORIA-SPYAD-SPRINT-1.md). A homologação real de navegador da Sprint 1.1 continua parcial; a Sprint 2 também aguarda testes de browser e revisão do usuário. Nenhum merge/deploy foi feito.
+Histórico: [Sprint 1.1](docs/SPRINT-1-1-HOMOLOGACAO-FINAL.md), [Sprint 2.0](docs/SPRINT-2-CREATIVE-LAB-RELATORIO.md). As homologações reais de navegador continuam pendentes. Nenhum merge ou deploy foi realizado.

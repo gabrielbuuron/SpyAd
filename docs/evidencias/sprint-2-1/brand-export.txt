@@ -1,0 +1,5 @@
+Comando real: npm run brand:generate -- --proof
+Signal S: vetores, ICO, PNGs e manifesto gerados. Paleta principal #80d9e5.
+Exit code: 0
+Os testes de reprodutibilidade repetiram a geração e confirmaram hashes iguais para os mesmos assets.
+Prancha de exportação não é screenshot do produto.
