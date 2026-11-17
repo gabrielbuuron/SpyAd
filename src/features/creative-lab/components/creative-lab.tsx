@@ -26,7 +26,7 @@ export function CreativeLab(){
     <div className="lab-privacy"><Icon name="shield" size={19}/><p><strong>Seu arquivo fica com você.</strong> Processamento local, sem upload e sem armazenamento automático. O original não será sobrescrito.</p></div>
     <ol className="lab-steps" aria-label="Etapas do processamento">{['Importar','Inspecionar','Limpar','Verificar','Exportar'].map((label,index)=>{
       const current=state.stage==='complete'?4:state.stage==='verifying'?3:state.stage==='encoding'?2:original?1:0;
-      return <li key={label} aria-current={index===current?'step':undefined}><span>{index+1}</span>{label}</li>;
+      return <li key={label} className={index<current?'is-complete':undefined} aria-current={index===current?'step':undefined}><span>{index+1}</span>{label}</li>;
     })}</ol>
     <input ref={picker} id="lab-file" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" className="sr-only" tabIndex={-1} onChange={event=>{void accept(event.currentTarget.files);event.currentTarget.value='';}}/>
     {!original&&!busy?<div className={'lab-dropzone'+(dragging?' is-dragging':'')} onDragOver={event=>{event.preventDefault();setDragging(true);}} onDragLeave={()=>setDragging(false)} onDrop={event=>{event.preventDefault();setDragging(false);void accept(event.dataTransfer.files);}}>

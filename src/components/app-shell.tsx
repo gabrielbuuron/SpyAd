@@ -59,8 +59,8 @@ function Workspace({ section }: { section: Section }) {
     <div className="workspace">
       <header className="topbar">
         <a className="mobile-brand" href="#dashboard" aria-label="SpyAd, visão geral"><BrandMark decorative/></a>
-        <div className="breadcrumb"><span className="header-brand"><BrandMark variant="wordmark" tone="mono-light" decorative/><span className="sr-only">SpyAd</span></span><span aria-hidden="true">/</span><strong>{title}</strong></div>
-        <div className="topbar-right"><span>{section==='creative-lab'?<span className="lab-local-badge">Processamento local</span>:<DemoBadge/>}</span><span className="sprint-label">Sprint 2.1</span></div>
+        <div className="breadcrumb"><span className="header-brand"><BrandMark variant="wordmark" tone="mono-light" decorative/><span className="sr-only">SpyAd</span></span>{section!=='dashboard'?<><span aria-hidden="true">/</span><strong>{title}</strong></>:null}</div>
+        <div className="topbar-right"><span>{section==='creative-lab'?<span className="lab-local-badge">Processamento local</span>:<DemoBadge/>}</span><span className="sprint-label">Sprint 2.2</span></div>
       </header>
       <main id="main-content" className="main-content" tabIndex={-1}>
         <div className="page-heading">
@@ -74,7 +74,7 @@ function Workspace({ section }: { section: Section }) {
           :section==='creative-lab'?<CreativeLab/>
           :section==='settings'?<Settings count={saved.length} onClear={clearCollection}/>
           :<PlannedArea radar={section==='radar'}/>}
-        <footer className="workspace-credit"><span>SpyAd · Sprint 2.1</span><span>Clareza para decisões melhores.</span></footer>
+        <footer className="workspace-credit"><span>SpyAd · Sprint 2.2</span><span>Clareza para decisões melhores.</span></footer>
       </main>
     </div>
     <BottomNav section={section}/>
