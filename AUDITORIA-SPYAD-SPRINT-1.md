@@ -134,3 +134,13 @@ Relatório completo: [docs/SPRINT-1-1-VISUAL-EXCELLENCE.md](docs/SPRINT-1-1-VISU
 
 Nenhuma alteração de main, merge, deploy, integração externa ou Sprint 2. A aprovação final permanece com o usuário.
 
+---
+
+## Homologação final da Sprint 1.1 — rodada de 17/11/2026
+
+Base: 29e4f64e4509c5e9f765705a3144746e51a546e5, conferida sem diferenças locais. Correções restritas ao dossiê (cabeçalho/conteúdo rolável/rodapé de ações), hero discretamente mais compacto e cards em alturas até 740 px. O botão salvar e os erros deixam a região rolável; nenhum conteúdo é sobreposto por position:fixed. Novo teste SSR confirma a separação estrutural, sem afirmar geometria em navegador.
+
+npm ci, lint, tipos, 38 testes, build e HTTP executados com sucesso. Dependências e lockfile preservados. O navegador retornou novamente The browser access host is unavailable. Permanecem pendentes: persistência após reload real, cliques, galeria/lista, Esc/foco, 390/820/1024/1366 px e zoom 200% no navegador. A homologação não está encerrada, e Sprint 2/branch sprint-2-creative-lab não foram iniciadas.
+
+Relatório desta rodada: [docs/SPRINT-1-1-HOMOLOGACAO-FINAL.md](docs/SPRINT-1-1-HOMOLOGACAO-FINAL.md). Logs: docs/evidencias/homologacao-sprint-1-1/. As avaliações anteriores são mantidas como histórico.
+

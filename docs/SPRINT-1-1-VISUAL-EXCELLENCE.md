@@ -153,3 +153,9 @@ Roteiro exato e nomes esperados de capturas: [HOMOLOGACAO-MANUAL.md](evidencias/
 6. Homologar visualmente os estados hover/focus/pressed, fontes do sistema e zoom 200%.
 
 A aprovação visual final pertence ao usuário. Esta rodada não autoriza publicação nem avanço para Sprint 2.
+
+---
+
+## Rodada posterior de homologação
+
+Sobre a referência 29e4f64, foi aplicada uma correção pontual de ergonomia no dossiê e compactação discreta do hero/cards. A suíte passou a 38 testes. O histórico deste documento permanece; o estado mais recente está em [SPRINT-1-1-HOMOLOGACAO-FINAL.md](SPRINT-1-1-HOMOLOGACAO-FINAL.md). A validação real de navegador continua pendente.

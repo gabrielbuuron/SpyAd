@@ -1,0 +1,5 @@
+Tentativa real: cua.listBrowsers()
+Resultado: The browser access host is unavailable
+390, 820, 1024 e 1366 px: não executados em navegador.
+Zoom 200%, cliques, reload, Esc e foco: não executados em navegador.
+Capturas novas: nenhuma.

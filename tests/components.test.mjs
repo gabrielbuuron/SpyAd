@@ -67,3 +67,20 @@ test('prévia não oferece playback falso e Dashboard mantém CTA do Explorer', 
   assert.ok(dashboard.includes('Dados fictícios'));
   assert.ok(dashboard.includes('Neste navegador'));
 });
+
+test('dossiê mantém salvar e erros fora da região rolável, com estado acessível', async () => {
+  for (const saved of [false, true]) {
+    const html = await renderComponent('ad-detail', 'AdDetail', { ...actions, saved, error: 'Falha ao salvar.', onClose() {} });
+    assert.ok(html.includes('role="region" aria-label="Conteúdo do dossiê" tabindex="0"'));
+    const footerStart = html.indexOf('<footer class="detail-footer"');
+    assert.ok(footerStart > html.indexOf('class="detail-scroll"'));
+    const scrollContent = html.slice(html.indexOf('class="detail-scroll"'), footerStart);
+    assert.doesNotMatch(scrollContent, /Salvar na coleção|Remover da coleção|role="alert"/);
+    const footer = html.slice(footerStart);
+    assert.ok(footer.includes('aria-label="Ações do dossiê"'));
+    assert.ok(footer.includes('aria-pressed="' + saved + '"'));
+    assert.ok(footer.includes('aria-label="' + (saved?'Remover Marca Exemplo A da coleção':'Salvar Marca Exemplo A na coleção') + '"'));
+    assert.ok(footer.includes('role="alert"'));
+    assert.ok(footer.includes('Falha ao salvar.'));
+  }
+});
