@@ -12,6 +12,8 @@ test('busca ignora caixa, acentos, espaços extras e combina termos', () => {
   assert.equal(normalize('  VÍDEO  '), 'video');
   assert.deepEqual(filterAds(ads, { ...defaults, query: '  VIDEO  instagram ' }).map(ad => ad.id), [1]);
   assert.deepEqual(filterAds(ads, { ...defaults, query: 'LANCAMENTO' }).map(ad => ad.id), [1]);
+  assert.deepEqual(filterAds(ads, { ...defaults, query: 'PONTO VISTA' }).map(ad => ad.id), [1]);
+  assert.deepEqual(filterAds(ads, { ...defaults, query: 'essencial outro' }).map(ad => ad.id), [2]);
 });
 test('filtros de plataforma e formato compõem e retornam vazio corretamente', () => {
   assert.deepEqual(filterAds(ads, { ...defaults, platform: 'Facebook', format: 'Vídeo' }).map(ad => ad.id), [3]);

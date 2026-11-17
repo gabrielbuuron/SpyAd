@@ -1,9 +1,33 @@
 import { ads } from '../lib/data';
 import { Icon } from './icon';
 import { CreativePreview } from './creative-preview';
+
 export function Dashboard({ count, onOpen }: { count: number; onOpen: (id: number) => void }) {
-  return <><section className="welcome-panel"><div className="welcome-copy"><span className="eyebrow">MENOS RUÍDO. MAIS CONTEXTO.</span><h2>Um olhar mais preciso<br/>sobre cada criativo.</h2><p>Descubra conceitos, examine os detalhes e construa sua biblioteca de referências. Comece com exemplos demonstrativos.</p><a className="button primary" href="#explorer">Abrir Ad Explorer<Icon name="arrow" size={18}/></a></div><div className="welcome-art" aria-hidden="true"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><span className="orbit-point"/><div className="art-card art-card-back"><span>CONTEXTO</span><div/></div><div className="art-card art-card-front"><Icon name="search" size={30}/><span>AD INTELLIGENCE</span><strong>Veja além<br/>da superfície.</strong><small>SPYAD / ESTUDO</small></div></div></section>
-  <div className="workspace-stats"><div><span className="stat-icon"><Icon name="dashboard"/></span><div><span>Exemplos no workspace</span><strong>{String(ads.length).padStart(2,'0')}<small>Dados fictícios</small></strong></div></div><div><span className="stat-icon violet"><Icon name="collection"/></span><div><span>Referências salvas</span><strong>{String(count).padStart(2,'0')}<small>Neste navegador</small></strong></div></div><div><span className="stat-icon"><Icon name="shield"/></span><div><span>Origem dos dados</span><strong className="stat-text">Demonstração<small>Nenhuma integração ativa</small></strong></div></div></div>
-  <section className="dashboard-section"><div className="section-title"><div><span className="eyebrow">PONTO DE PARTIDA</span><h2>Referências para explorar</h2></div><a className="text-link" href="#explorer">Ver todos<Icon name="arrow" size={16}/></a></div><div className="reference-grid">{ads.map(ad=><button className="reference-card" key={ad.id} onClick={()=>onOpen(ad.id)}><CreativePreview ad={ad} small/><div><span>{ad.platform} · {ad.format}</span><h3>{ad.brand}</h3><p>{ad.category} · Ilustrativo</p></div><Icon name="arrow" size={17}/></button>)}</div></section>
-  <div className="integrity-note"><Icon name="shield" size={18}/><p><strong>Inteligência começa com transparência.</strong> Os exemplos são fictícios. Nenhuma métrica de desempenho está sendo apresentada como dado real.</p></div></>;
+  const platforms = new Set(ads.map(ad=>ad.platform)).size;
+  return <>
+    <section className="welcome-panel">
+      <div className="welcome-copy"><span className="eyebrow">Seu próximo ponto de vista</span><h2>Boas referências.<br/>Melhores perguntas.</h2>
+        <p>Explore conceitos, entenda o contexto e organize suas próximas ideias. Tudo começa no Ad Explorer.</p>
+        <a className="button primary" href="#explorer">Explorar anúncios<Icon name="arrow" size={19}/></a>
+      </div>
+      <ol className="hero-guide" aria-label="Como explorar a SpyAd">
+        <li><span>01</span><div><strong>Descubra um conceito</strong><p>Busque nos exemplos do Explorer.</p></div></li>
+        <li><span>02</span><div><strong>Examine o contexto</strong><p>Abra o dossiê, sem supor resultados.</p></div></li>
+        <li><span>03</span><div><strong>Guarde a referência</strong><p>Salve sua coleção neste navegador.</p></div></li>
+      </ol>
+    </section>
+    <div className="workspace-stats">
+      <div><Icon name="dashboard"/><div><span>Exemplos disponíveis</span><strong>{String(ads.length).padStart(2,'0')}<small>Dados fictícios</small></strong></div></div>
+      <div><Icon name="collection"/><div><span>Referências salvas</span><strong>{String(count).padStart(2,'0')}<small>Neste navegador</small></strong></div></div>
+      <div><Icon name="shield"/><div><span>Plataformas Meta</span><strong>{String(platforms).padStart(2,'0')}<small>Representadas nos exemplos</small></strong></div></div>
+    </div>
+    <section className="dashboard-section"><div className="section-title"><div><span className="eyebrow">Comece por aqui</span><h2>Referências para explorar</h2></div><a className="text-link" href="#explorer">Ver no Explorer<Icon name="arrow" size={17}/></a></div>
+      <div className="reference-grid">{ads.map(ad=><article className="reference-card" key={ad.id}>
+        <CreativePreview ad={ad} small/><div><span>{ad.platform} · {ad.format}</span><h3>{ad.brand}</h3><p>{ad.category} · Ilustrativo</p>
+          <button className="reference-open" onClick={()=>onOpen(ad.id)} aria-label={'Abrir dossiê de '+ad.brand}>Ver dossiê<Icon name="arrow" size={16}/></button>
+        </div>
+      </article>)}</div>
+    </section>
+    <div className="integrity-note"><Icon name="shield" size={19}/><p><strong>Contexto antes de conclusões.</strong> Exemplos demonstrativos, sem métricas de desempenho e sem integrações ativas.</p></div>
+  </>;
 }

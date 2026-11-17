@@ -16,3 +16,13 @@ for (const foreground of ['text', 'muted', 'subtle', 'accent']) {
   }
 }
 test('botão primário tem contraste AA', () => { assert.ok(contrast('#0b252d', token('accent')) >= 4.5); });
+for (const background of ['background', 'surface', 'surface-raised']) {
+  test('borda dos controles é distinguível em ' + background, () => { assert.ok(contrast(token('control-border'), token(background)) >= 3); });
+}
+for (const [name, foreground, background] of [
+  ['ação de dossiê', '#c9e9ee', '#1a303e'],
+  ['estado salvo', '#c3edf0', '#1e3b44'],
+  ['aviso de erro', '#f0b5b5', '#302027'],
+  ['badge demo', '#bfdcc8', '#18251e'],
+  ['legenda da prévia', '#e5eff2', '#674d30'],
+]) test('contraste AA em ' + name, () => { assert.ok(contrast(foreground, background) >= 4.5); });

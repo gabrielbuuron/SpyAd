@@ -8,7 +8,7 @@ export function normalize(value) {
 export function filterAds(ads, filters, saved = null) {
   const words = normalize(filters.query).split(/\s+/).filter(Boolean);
   return ads.filter(ad => {
-    const text = normalize([ad.brand, ad.headline, ad.format, ad.country, ad.platform, ad.category].join(' '));
+    const text = normalize([ad.brand, ad.headline, ad.concept, ad.format, ad.country, ad.platform, ad.category].join(' '));
     return words.every(word => text.includes(word)) &&
       (filters.format === 'all' || ad.format === filters.format) &&
       (filters.platform === 'all' || ad.platform === filters.platform) &&

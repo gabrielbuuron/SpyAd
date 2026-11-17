@@ -1,5 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react';
 const paths: Record<string, ReactNode> = {
+  more: <><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></>,
   dashboard: <><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></>,
   search: <><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></>,
   radar: <><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 6M7 8a6 6 0 0 0 7 10"/><circle cx="12" cy="12" r="1"/></>,
