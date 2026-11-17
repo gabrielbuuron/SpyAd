@@ -119,3 +119,18 @@ Adicionados: package-lock.json, next.config.mjs, src/components/{app-shell,sideb
 - [ ] Aprovar a migração para Next 16 no ambiente habitual antes de qualquer publicação.
 
 A Sprint 1 não está declarada integralmente homologada. As pendências acima devem ser encerradas antes de iniciar a Sprint 2.
+
+---
+
+## Continuação histórica — Sprint 1.1 Visual Excellence (17/11/2026)
+
+A seção anterior registra a Sprint 1.0 e foi preservada. A implementação 1.1 parte do HEAD 1cf7d45f745d70888edc015e6c25572e2ab6f502. Commit de código: 2b9a26bbaaae863ff3961021810664816120dde1.
+
+Aplicados: escala tipográfica de 12–40 px por tokens; shell compacto; pesquisa protagonista com CTA e foco no resumo; filtros/contagem em uma linha; ações textuais de dossiê e salvamento; Dashboard orientado ao Explorer; rail de tablet e navegação móvel com Mais; descrição acessível do dossiê. Corrigida busca por conceito. Dependências e lockfile não foram alterados.
+
+Verificações desta rodada: npm ci offline, lint, tipos, 37 testes (21 contraste, 9 domínio/storage e 7 SSR), build e teste HTTP executados com sucesso. Segunda revisão de código/semântica e markup SSR realizada, com correções de foco, busca e lint. Nenhuma homologação visual foi declarada: o navegador integrado continua indisponível, e não há novas capturas. Cliques, zoom 200%, dispositivos, duas abas reais e recarga real continuam pendentes.
+
+Relatório completo: [docs/SPRINT-1-1-VISUAL-EXCELLENCE.md](docs/SPRINT-1-1-VISUAL-EXCELLENCE.md). Logs e roteiro exato: [docs/evidencias/sprint-1-1/](docs/evidencias/sprint-1-1/).
+
+Nenhuma alteração de main, merge, deploy, integração externa ou Sprint 2. A aprovação final permanece com o usuário.
+

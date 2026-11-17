@@ -1,0 +1,4 @@
+Tentativa real: cua.listBrowsers()
+Resultado: The browser access host is unavailable
+Nenhuma captura obtida. Nenhum teste visual ou interativo executado.
+Não há screenshots simulados.

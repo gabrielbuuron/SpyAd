@@ -1,0 +1,9 @@
+Execução real em 17/11/2026
+Node v24.22.0 / npm 11.19.1
+npm ci --offline --no-audit --no-fund
+npm warn deprecated eslint@9.39.5: This version is no longer supported.
+added 359 packages in 2m
+Exit code: 0
+
+Dependências e package-lock.json preservados.
+SHA256 package-lock.json: 81751C4144E8F3248C17858F0EA74A2C43811F12062F8BF6508733D53F696CA3

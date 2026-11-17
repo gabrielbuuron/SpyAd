@@ -1,0 +1,53 @@
+Execução real em 17/11/2026
+Node v24.22.0 / npm 11.19.1
+
+> spyad@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ galeria e lista mantêm os mesmos dados e ações acessíveis (291.2147ms)
+✔ salvamento expõe estado e nome de remoção nas duas visualizações (10.2404ms)
+✔ navegação móvel preserva os seis destinos com disclosure explícito (58.6088ms)
+✔ Explorer mantém busca, submit, modos e vínculo com os resultados (192.1374ms)
+✔ coleção vazia e estados de filtro vazio oferecem ação de recuperação (5.475ms)
+✔ dossiê descreve demonstração, fechamento e falha de armazenamento (26.8712ms)
+✔ prévia não oferece playback falso e Dashboard mantém CTA do Explorer (32.4739ms)
+✔ contraste AA dos tokens text / background (8.4489ms)
+✔ contraste AA dos tokens text / surface (0.418ms)
+✔ contraste AA dos tokens text / surface-raised (0.4691ms)
+✔ contraste AA dos tokens muted / background (1.6906ms)
+✔ contraste AA dos tokens muted / surface (0.316ms)
+✔ contraste AA dos tokens muted / surface-raised (6.143ms)
+✔ contraste AA dos tokens subtle / background (3.5023ms)
+✔ contraste AA dos tokens subtle / surface (0.4145ms)
+✔ contraste AA dos tokens subtle / surface-raised (0.4589ms)
+✔ contraste AA dos tokens accent / background (1.8567ms)
+✔ contraste AA dos tokens accent / surface (0.3404ms)
+✔ contraste AA dos tokens accent / surface-raised (0.1526ms)
+✔ botão primário tem contraste AA (0.2264ms)
+✔ borda dos controles é distinguível em background (0.5906ms)
+✔ borda dos controles é distinguível em surface (0.137ms)
+✔ borda dos controles é distinguível em surface-raised (0.245ms)
+✔ contraste AA em ação de dossiê (0.2105ms)
+✔ contraste AA em estado salvo (0.4132ms)
+✔ contraste AA em aviso de erro (0.4857ms)
+✔ contraste AA em badge demo (0.1107ms)
+✔ contraste AA em legenda da prévia (0.1226ms)
+✔ busca ignora caixa, acentos, espaços extras e combina termos (4.3337ms)
+✔ filtros de plataforma e formato compõem e retornam vazio corretamente (0.6151ms)
+✔ coleções compõem com busca sem alterar a base original (0.6371ms)
+✔ salvar, recarregar e remover preservam o formato versionado (1.0142ms)
+✔ redefinição e reidratação mantêm somente IDs válidos sem duplicatas (0.3508ms)
+✔ coleção corrompida é preservada até redefinição explícita (7.0175ms)
+✔ armazenamento indisponível e quota excedida retornam falha sem falso sucesso (1.2432ms)
+✔ gravações sucessivas leem o armazenamento atual, sem perder outro salvamento (0.3253ms)
+✔ navegação tem seis destinos únicos e fixtures explicitamente demonstrativas (1.0242ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2060.6686
+
+Exit code: 0

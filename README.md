@@ -1,4 +1,4 @@
-# SpyAd — Sprint 1.0
+# SpyAd — Sprint 1.1
 
 Protótipo demonstrativo de inteligência publicitária. Sem credenciais, coleta, anúncios reais, APIs pagas ou autenticação.
 
@@ -26,3 +26,5 @@ npm run test:http
 A navegação usa hashes: #dashboard, #explorer, #collections, #settings, #radar e #dna. Busca e filtros funcionam sobre três exemplos fictícios. Coleções persistem somente no navegador (localStorage), sem sincronização entre dispositivos. Configurações permite redefinir a coleção demonstrativa. Spy Radar e Offer DNA são áreas planejadas.
 
 A migração Next 15→16, os testes executados e as limitações de validação visual estão em [AUDITORIA-SPYAD-SPRINT-1.md](AUDITORIA-SPYAD-SPRINT-1.md). Não houve deploy ou merge. A homologação visual continua pendente.
+
+Refinamento atual: [Sprint 1.1 — Visual Excellence](docs/SPRINT-1-1-VISUAL-EXCELLENCE.md). O Explorer ganhou busca e ações claras, tokens tipográficos consolidados e navegação própria para tablet/celular. O menu Mais reúne Radar, DNA e Configurações no celular. Os 37 testes não substituem a homologação em navegador; novas capturas continuam pendentes. Veja o [roteiro manual](docs/evidencias/sprint-1-1/HOMOLOGACAO-MANUAL.md).
