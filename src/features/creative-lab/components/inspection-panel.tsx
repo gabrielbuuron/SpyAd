@@ -16,7 +16,7 @@ export function InspectionPanel({inspection}:{inspection:Inspection}){
     </dl>
     <details className="lab-advanced"><summary>Avançado · metadados e diagnóstico</summary>
       <p>Os campos abaixo podem conter informações sensíveis do seu próprio arquivo. Permanecem nesta sessão.</p>
-      <dl className="lab-metadata">{Object.entries(inspection.metadata).map(([id,field])=><div key={id}><dt>{field.label}</dt><dd><strong>{statusLabels[field.status]}</strong><span>{field.value}</span></dd></div>)}</dl>
+      <dl className="lab-metadata">{Object.entries(inspection.metadata).map(([id,field])=><div key={id}><dt>{field.label}</dt><dd><strong data-status={field.status}>{statusLabels[field.status]}</strong><span>{field.value}</span></dd></div>)}</dl>
       <p><strong>Cor:</strong> {inspection.color}. Um perfil ICC é identificado por contêiner; sua interpretação completa não está coberta.</p>
       <p><strong>Dimensões codificadas:</strong> {inspection.width} × {inspection.height} px. Orientação efetiva: {inspection.orientation}.</p>
       {inspection.details.length?<dl className="lab-metadata">{inspection.details.map((field,index)=><div key={index}><dt>{field.label}</dt><dd>{field.value}</dd></div>)}</dl>:<p>Nenhum campo textual adicional foi lido.</p>}

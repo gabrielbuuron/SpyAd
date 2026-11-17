@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { sections } from '../lib/data';
 import type { Section } from '../lib/types';
 import { Icon } from './icon';
+import { BrandMark } from './brand-mark';
 
 export function BottomNav({ section }: { section: Section }) {
   const moreRef = useRef<HTMLDetailsElement>(null);
@@ -18,7 +19,7 @@ export function BottomNav({ section }: { section: Section }) {
   },[]);
   return <nav className="bottom-nav" aria-label="Navegação móvel">
     {primary.map(item=><a key={item.id} href={'#'+item.id} aria-current={section===item.id?'page':undefined}>
-      <Icon name={item.icon} size={21}/><span>{item.id==='dashboard'?'Início':item.id==='explorer'?'Explorer':'Coleções'}</span>
+      {item.id==='dashboard'?<BrandMark variant="symbol" tone={section==='dashboard'?'brand':'mono-light'} decorative/>:<Icon name={item.icon} size={21}/>}<span>{item.id==='dashboard'?'Início':item.id==='explorer'?'Explorer':'Coleções'}</span>
     </a>)}
     <details className={'more-navigation'+(moreActive?' more-active':'')} ref={moreRef} onKeyDown={event=>{
       if(event.key==='Escape'){event.preventDefault();moreRef.current?.removeAttribute('open');moreRef.current?.querySelector('summary')?.focus();}
