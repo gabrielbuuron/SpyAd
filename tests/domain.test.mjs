@@ -63,9 +63,9 @@ test('gravações sucessivas leem o armazenamento atual, sem perder outro salvam
   updateCollection(local, [1, 2, 3], 3);
   assert.deepEqual(parseCollection(local.getItem(COLLECTION_KEY), [1, 2, 3]).ids, [1, 3]);
 });
-test('navegação tem seis destinos únicos e fixtures explicitamente demonstrativas', () => {
-  assert.deepEqual(sections.map(section => section.id), ['dashboard', 'explorer', 'radar', 'dna', 'collections', 'settings']);
-  assert.equal(new Set(sections.map(section => section.id)).size, 6);
+test('navegação preserva seis destinos e inclui Creative Lab e fixtures explicitamente demonstrativas', () => {
+  assert.deepEqual(sections.filter(section=>section.id!=='creative-lab').map(section => section.id), ['dashboard', 'explorer', 'radar', 'dna', 'collections', 'settings']);
+  assert.equal(new Set(sections.map(section => section.id)).size, 7);
   assert.equal(new Set(ads.map(ad => ad.id)).size, ads.length);
   assert.ok(ads.every(ad => ad.brand.startsWith('Marca Exemplo')));
   assert.ok(ads.every(ad => !('spend' in ad) && !('revenue' in ad)));

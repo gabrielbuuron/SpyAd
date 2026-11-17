@@ -1,4 +1,4 @@
-export type Section = 'dashboard' | 'explorer' | 'radar' | 'dna' | 'collections' | 'settings';
+export type Section = 'dashboard' | 'creative-lab' | 'explorer' | 'radar' | 'dna' | 'collections' | 'settings';
 export type Ad = {
   id: number; brand: string; headline: string; format: 'Vídeo' | 'Imagem';
   country: string; platform: 'Instagram' | 'Facebook'; category: string;

@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { sections } from '../lib/data';
 import type { Ad, Section } from '../lib/types';
 import { useCollections } from '../lib/use-collections';
@@ -15,7 +16,9 @@ import { PlannedArea } from './planned-area';
 import { Settings } from './settings';
 import { ads } from '../lib/data';
 
+const CreativeLab=dynamic(()=>import('../features/creative-lab/components/creative-lab').then(entry=>entry.CreativeLab),{loading:()=> <p role="status">Carregando laboratório local…</p>});
 const descriptions = {
+  'creative-lab': 'Importe, inspecione, limpe e verifique imagens próprias ou autorizadas.',
   dashboard: 'Seu workspace para descobrir, analisar e organizar referências.',
   explorer: 'Descubra conceitos nos exemplos de Meta Ads. Dados fictícios, sem integração ativa.',
   collections: 'Sua biblioteca local de exemplos. Salva somente neste navegador.',
@@ -56,7 +59,7 @@ function Workspace({ section }: { section: Section }) {
       <header className="topbar">
         <a className="mobile-brand" href="#dashboard" aria-label="SpyAd, visão geral">Spy<span>Ad</span></a>
         <div className="breadcrumb"><span>Workspace</span><span aria-hidden="true">/</span><strong>{title}</strong></div>
-        <div className="topbar-right"><DemoBadge/><span className="sprint-label">Sprint 1.1</span></div>
+        <div className="topbar-right"><span>{section==='creative-lab'?<span className="lab-local-badge">Processamento local</span>:<DemoBadge/>}</span><span className="sprint-label">Sprint 2.0</span></div>
       </header>
       <main id="main-content" className="main-content" tabIndex={-1}>
         <div className="page-heading">
@@ -67,9 +70,10 @@ function Workspace({ section }: { section: Section }) {
         {notice.message?<div className={'feedback '+(notice.error?'feedback-error':'')} role={notice.error?'alert':'status'}><Icon name={notice.error?'shield':'check'} size={18}/><span>{notice.message}</span><button className="icon-button" aria-label="Fechar aviso" onClick={()=>setNotice({message:'',error:false})}><Icon name="close" size={18}/></button></div>:null}
         {section==='dashboard'?<Dashboard count={saved.length} onOpen={id=>{const ad=ads.find(item=>item.id===id);if(ad)setSelected(ad);}}/>
           :section==='explorer'||section==='collections'?<AdExplorer collection={section==='collections'} saved={saved} onOpen={setSelected} onSave={save}/>
+          :section==='creative-lab'?<CreativeLab/>
           :section==='settings'?<Settings count={saved.length} onClear={clearCollection}/>
           :<PlannedArea radar={section==='radar'}/>}
-        <footer className="workspace-credit"><span>SpyAd · Sprint 1.1</span><span>Clareza para decisões melhores.</span></footer>
+        <footer className="workspace-credit"><span>SpyAd · Sprint 2.0</span><span>Clareza para decisões melhores.</span></footer>
       </main>
     </div>
     <BottomNav section={section}/>

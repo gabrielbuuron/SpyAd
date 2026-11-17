@@ -27,7 +27,7 @@ test('navegação móvel preserva os seis destinos com disclosure explícito', a
   const html = await renderComponent('bottom-nav', 'BottomNav', { section: 'settings' });
   for (const section of ['dashboard','explorer','collections','radar','dna','settings']) assert.ok(html.includes('href="#' + section + '"'));
   assert.ok(html.includes('<details'));
-  assert.ok(html.includes('Mais áreas: Spy Radar, Offer DNA e Configurações'));
+  assert.ok(html.includes('Mais áreas: Creative Lab, Spy Radar, Offer DNA e Configurações'));
   assert.match(html, /href="#settings"[^>]*aria-current="page"/);
 });
 test('Explorer mantém busca, submit, modos e vínculo com os resultados', async () => {
@@ -83,4 +83,27 @@ test('dossiê mantém salvar e erros fora da região rolável, com estado acess�
     assert.ok(footer.includes('role="alert"'));
     assert.ok(footer.includes('Falha ao salvar.'));
   }
+});
+
+test('Creative Lab inicia com seletor local, limites e sem resultado/exportação falsos', async () => {
+  const html=await renderComponent('../features/creative-lab/components/creative-lab','CreativeLab',{});
+  assert.ok(html.includes('type="file"'));
+  assert.ok(html.includes('image/jpeg,image/png,image/webp'));
+  assert.ok(html.includes('Escolher imagem'));
+  assert.ok(html.includes('10 MiB'));
+  assert.ok(html.includes('8 megapixels'));
+  assert.ok(html.includes('sem upload'));
+  assert.doesNotMatch(html, /Baixar nova imagem|download=|type="submit"/);
+});
+
+test('relatório apresenta cobertura limitada e estados não verificáveis sem promessa absoluta', async () => {
+  const {inspectImage}=await import('../src/features/creative-lab/lib/inspect-image.mjs');
+  const {fixtures}=await import('./lab-fixtures.mjs');
+  const {compareMetadata}=await import('../src/features/creative-lab/lib/verify-image.mjs');
+  const input=inspectImage((await fixtures()).png);
+  const html=await renderComponent('../features/creative-lab/components/inspection-panel','ComparisonPanel',{before:input,after:input,comparison:compareMetadata(input,input)});
+  assert.ok(html.includes('Não verificável'));
+  assert.ok(html.includes('Não é uma garantia de arquivo sem metadados.'));
+  assert.ok(html.includes('Antes'));
+  assert.ok(html.includes('Depois'));
 });

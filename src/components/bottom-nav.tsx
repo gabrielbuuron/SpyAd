@@ -7,7 +7,7 @@ import { Icon } from './icon';
 export function BottomNav({ section }: { section: Section }) {
   const moreRef = useRef<HTMLDetailsElement>(null);
   const primary = sections.filter(item=>['dashboard','explorer','collections'].includes(item.id));
-  const extra = sections.filter(item=>['radar','dna','settings'].includes(item.id));
+  const extra = sections.filter(item=>['creative-lab','radar','dna','settings'].includes(item.id));
   const moreActive = extra.some(item=>item.id===section);
   useEffect(()=>{
     function outside(event: PointerEvent) {
@@ -23,9 +23,9 @@ export function BottomNav({ section }: { section: Section }) {
     <details className={'more-navigation'+(moreActive?' more-active':'')} ref={moreRef} onKeyDown={event=>{
       if(event.key==='Escape'){event.preventDefault();moreRef.current?.removeAttribute('open');moreRef.current?.querySelector('summary')?.focus();}
     }}>
-      <summary aria-label="Mais áreas: Spy Radar, Offer DNA e Configurações"><Icon name="more" size={21}/><span>Mais</span></summary>
+      <summary aria-label="Mais áreas: Creative Lab, Spy Radar, Offer DNA e Configurações"><Icon name="more" size={21}/><span>Mais</span></summary>
       <div className="more-menu"><p>Mais áreas</p>{extra.map(item=><a key={item.id} href={'#'+item.id} aria-current={section===item.id?'page':undefined} onClick={()=>{moreRef.current?.removeAttribute('open');moreRef.current?.querySelector('summary')?.focus();}}>
-        <Icon name={item.icon}/><span>{item.label}</span>{item.id!=='settings'?<small>Planejado</small>:null}
+        <Icon name={item.icon}/><span>{item.label}</span>{['radar','dna'].includes(item.id)?<small>Planejado</small>:null}
       </a>)}</div>
     </details>
   </nav>;

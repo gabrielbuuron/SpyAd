@@ -3,6 +3,7 @@ import type { Ad, Section } from './types';
 export const sections: { id: Section; label: string; icon: string }[] = [
   { id: 'dashboard', label: 'Visão geral', icon: 'dashboard' },
   { id: 'explorer', label: 'Ad Explorer', icon: 'search' },
+  { id: 'creative-lab', label: 'Creative Lab', icon: 'lab' },
   { id: 'radar', label: 'Spy Radar', icon: 'radar' },
   { id: 'dna', label: 'Offer DNA', icon: 'dna' },
   { id: 'collections', label: 'Coleções', icon: 'collection' },
